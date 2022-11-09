@@ -1,4 +1,5 @@
 require(`dotenv`).config();
+const { conexao } = require('./config/database.js')
 
 const express = require('express');
 
@@ -10,13 +11,13 @@ app.set(`views`, `./public/`);
 const port = process.env.PORT;
 
 //rotas
-app.get(`/login`,(req, res)=>{
+app.get(`/login`, (req, res) => {
     res.render(`login.ejs`);
 })
 
 
 
 
-app.listen (port, ()=>{
-    console.info("Servidor online na porta "+port)
+app.listen(port, () => {
+    console.info("Servidor online na porta " + port)
 })
